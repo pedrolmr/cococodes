@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { createClient } from "contentful";
+import PostCard from "../components/PostCard";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -22,16 +23,12 @@ export default function Home({ posts }) {
   console.log(posts);
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="border-2 border-red-500">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      {posts.map((post) => (
+        // <div className="border-4 border-purple-300" key={post.sys.id}>
+        //   {post.fields.title}
+        // </div>
+        <PostCard key={post.sys.id} post={post} />
+      ))}
     </div>
   );
 }
