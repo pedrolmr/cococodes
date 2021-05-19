@@ -1,6 +1,25 @@
 import Head from "next/head";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({
+    content_type: "post",
+  });
+
+  return {
+    props: {
+      posts: res.items,
+    },
+  };
+}
+
+export default function Home({ posts }) {
+  console.log(posts);
   return (
     <div>
       <Head>
@@ -9,7 +28,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 class="border-2 border-red-500">
+        <h1 className="border-2 border-red-500">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
