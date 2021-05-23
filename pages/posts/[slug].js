@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -34,6 +35,25 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PostDetails({ post }) {
+  const { title, content, date } = post.fields;
   console.log(post);
-  return <div>Post Details</div>;
+  return (
+    <div>
+      <div>
+        <h2>{title}</h2>
+        <p>
+          {new Date(date).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+        </p>
+      </div>
+
+      <div>
+        <h4>Content:</h4>
+        <p>{documentToReactComponents(content)}</p>
+      </div>
+    </div>
+  );
 }
