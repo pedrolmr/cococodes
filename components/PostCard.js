@@ -4,11 +4,11 @@ export default function PostCard({ post }) {
   const { title, slug, date } = post.fields;
 
   return (
-    <div className="border-4 border-purple-300">
+    <div>
       <Link href={`/posts/${slug}`}>
         <a>
-          <div className="border-2 border-red-300">
-            <h3 className="text-lg font-bold ">{title}</h3>
+          <div className="my-5">
+            <h3 className="text-sl font-bold text-gray-600">{title}</h3>
             <span className="text-sm font-thin color-gray-200">
               {new Date(date).toLocaleDateString()}
             </span>

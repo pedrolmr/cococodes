@@ -36,12 +36,12 @@ export async function getStaticProps({ params }) {
 
 export default function PostDetails({ post }) {
   const { title, content, date } = post.fields;
-  console.log(post);
+
   return (
     <div>
       <div>
-        <h2>{title}</h2>
-        <p>
+        <h1 className="text-2xl font-bold mb-5">{title}</h1>
+        <p className="text-sm color-gray-200 mb-5 ">
           {new Date(date).toLocaleDateString("en-US", {
             day: "numeric",
             month: "short",
@@ -51,7 +51,6 @@ export default function PostDetails({ post }) {
       </div>
 
       <div>
-        <h4>Content:</h4>
         <p>{documentToReactComponents(content)}</p>
       </div>
     </div>

@@ -24,9 +24,6 @@ export default function Home({ posts }) {
   return (
     <div>
       {posts.map((post) => (
-        // <div className="border-4 border-purple-300" key={post.sys.id}>
-        //   {post.fields.title}
-        // </div>
         <PostCard key={post.sys.id} post={post} />
       ))}
     </div>
