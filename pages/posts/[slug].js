@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Subscribe from "../../components/Subscribe";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -41,7 +42,7 @@ export default function PostDetails({ post }) {
     <div>
       <div>
         <h1 className="text-2xl font-bold mb-5">{title}</h1>
-        <p className="text-sm color-gray-200 mb-5 ">
+        <p className="text-sm color-gray-200">
           {new Date(date).toLocaleDateString("en-US", {
             day: "numeric",
             month: "short",
@@ -50,8 +51,12 @@ export default function PostDetails({ post }) {
         </p>
       </div>
 
-      <div>
+      <div className="my-5">
         <p>{documentToReactComponents(content)}</p>
+      </div>
+
+      <div>
+        <Subscribe />
       </div>
     </div>
   );
