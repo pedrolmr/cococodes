@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import "../styles/prism.css";
+
 import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {

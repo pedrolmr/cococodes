@@ -39,7 +39,7 @@ const Subscribe = () => {
         ""
       )}
 
-      <div className="border-2 border-gray-200 rounded p-3">
+      <div className="border-2 border-gray-100 rounded p-3">
         <span className="font-bold text-lg">Subscribe to the Newsletter</span>
         <p className="my-2">
           Get emails about web development and early access to new articles.
@@ -56,7 +56,7 @@ const Subscribe = () => {
               type="email"
             />
             <button
-              className="border-1 p-1 rounded bg-gray-200 rounded p-1 px-3 focus:outline-none"
+              className="border-1 p-1 rounded bg-gray-200 rounded p-1 px-3 focus:outline-none hover:bg-gray-300 transition delay-100 ease-in"
               type="submit"
             >
               Subscribe
