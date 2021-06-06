@@ -39,15 +39,15 @@ const Subscribe = () => {
         ""
       )}
 
-      <div className="border-2 border-gray-100 rounded p-3">
+      <div className="border-2 border-gray-100 rounded p-3 dark:border-gray-700">
         <span className="font-bold text-lg">Subscribe to the Newsletter</span>
         <p className="my-2">
           Get emails about web development and early access to new articles.
         </p>
         <form onSubmit={subscribe}>
-          <div className="flex border-2 border-gray-100 justify-between rounded p-1">
+          <div className="flex border-2 border-gray-100 justify-between rounded dark:bg-white">
             <input
-              className="focus:outline-none w-full"
+              className="focus:outline-none w-full pl-2"
               id="email-input"
               name="email"
               placeholder="email@mail.com"
@@ -56,7 +56,7 @@ const Subscribe = () => {
               type="email"
             />
             <button
-              className="border-1 p-1 rounded bg-gray-200 rounded p-1 px-3 focus:outline-none hover:bg-gray-300 transition delay-100 ease-in"
+              className="border-1 p-1 rounded bg-gray-200 rounded p-1 px-3 focus:outline-none hover:bg-gray-300 transition delay-100 ease-in dark:bg-gray-600"
               type="submit"
             >
               Subscribe

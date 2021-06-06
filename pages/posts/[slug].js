@@ -52,7 +52,7 @@ const renderOptions = {
         console.log("children", children);
         return <pre className="lang-javascript">{children}</pre>;
       }
-      return <p>{children}</p>;
+      return <p className="dark:text-white">{children}</p>;
     },
 
     renderMark: {
@@ -81,8 +81,8 @@ export default function PostDetails({ post }) {
       </Head>
       <div>
         <div>
-          <h1 className="text-2xl font-bold mb-5">{title}</h1>
-          <p className="text-sm color-gray-200">
+          <h1 className="text-2xl font-bold mb-5 dark:text-white">{title}</h1>
+          <p className="text-sm color-gray-200 dark:text-gray-400 mb-5">
             {new Date(date).toLocaleDateString("en-US", {
               day: "numeric",
               month: "short",
@@ -91,9 +91,7 @@ export default function PostDetails({ post }) {
           </p>
         </div>
 
-        <div className="my-5">
-          {documentToReactComponents(content, renderOptions)}
-        </div>
+        <div>{documentToReactComponents(content, renderOptions)}</div>
 
         <div>
           <Subscribe />

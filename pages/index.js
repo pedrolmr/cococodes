@@ -21,6 +21,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
+    // <div className="transition ease-in dark:bg-gray-800">
     <div>
       {posts.map((post) => (
         <PostCard key={post.sys.id} post={post} />
